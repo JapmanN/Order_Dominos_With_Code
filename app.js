@@ -59,4 +59,17 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 	order.price(function(price) {
 		console.log("The price of my order is: $" + price.result.Order.Amounts.Payment);
 	});
+	
+	// ADD MY CARD NUMBER
+	var cardNumber = process.env.CARD_NUMBER;
+	
+	// GIVE REMAINING CARD INFO TO COMPLETE TRANSACTION
+	var cardInfo = new order.PaymentObject();
+	cardInfo.Amount = order.Amounts.Customer;
+	cardInfo.Number = cardNumber;
+	cardInfo.CardType = order.validateCC(cardNumber);
+	cardInfo.Expiration = process.env.CARD_EXPIRATION;
+	cardInfo.SecurityCode = process.env.CARD_SECURITY_CODE;
+	cardInfo.PostalCode = process.env.POSTAL_CODE; // Billing Zipcode
+	order.Payments.push(cardInfo);
 });
