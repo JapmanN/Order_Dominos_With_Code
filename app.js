@@ -70,7 +70,7 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 	cardInfo.CardType = order.validateCC(cardNumber);
 	cardInfo.Expiration = process.env.CARD_EXPIRATION;
 	cardInfo.SecurityCode = process.env.CARD_SECURITY_CODE;
-	cardInfo.PostalCode = process.env.POSTAL_CODE; // Billing Zipcode
+	cardInfo.PostalCode = process.env.POSTAL_CODE; // Billing Postal Code
 	order.Payments.push(cardInfo);
 	
 	// PLACE MY ORDER
