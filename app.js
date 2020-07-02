@@ -16,4 +16,15 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 	Closest_Store.getMenu(function(storeMenu) {
 		console.log(storeMenu.menuData.result.Products);
 	});
+	
+	var myAddress = new pizzapi.Address(process.env.MY_ADDRESS);
+	
+	// CREATE AN OBJECT WITH MY PERSONAL INFORMATION TO SEND TO DOMINOS WHEN I ORDER THE PIZZA
+	var japman = new pizzapi.Customer({
+		address: myAddress,
+		firstName: 'Japman',
+		lastName: 'Nagra',
+		phone: process.env.PHONE,
+		email: 'japmannagra20@gmail.com'
+	});
 });
