@@ -27,4 +27,11 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 		phone: process.env.PHONE,
 		email: 'japmannagra20@gmail.com'
 	});
+	
+	// CREATE AN OBJECT OF THE ORDER WITH MY INFO, THE STORE I'M ORDERING FROM, AND THE DELIVERY METHOD
+	var order = new pizzapi.Order({
+		customer: japman,
+		storeID: Closest_Store.ID,
+		deliveryMethod: 'Carryout' // or 'Delivery'
+	});
 });
