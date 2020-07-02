@@ -1,0 +1,15 @@
+{
+  "name": "order_dominos_with_code",
+  "version": "1.0.0",
+  "description": "An application that uses the Dominos API to order pizza using code",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Japman Nagra",
+  "license": "ISC",
+  "dependencies": {
+    "dominos": "^2.1.1",
+    "dotenv": "^8.2.0"
+  }
+}
