@@ -34,4 +34,19 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 		storeID: Closest_Store.ID,
 		deliveryMethod: 'Carryout' // or 'Delivery'
 	});
+	
+	// ADD A 12-INCH PAN PIZZA AND A 20oz COKE TO MY ORDER
+	order.addItem(
+		new pizzapi.Item({
+			code: 'P12IPAZA',
+			options: [],
+			quantity: 1
+		}),
+		
+		new pizzapi.Item({
+			code: '20BCOKE',
+			options: [],
+			quantity: 1
+		})
+	);
 });
