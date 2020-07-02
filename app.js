@@ -54,4 +54,9 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 	order.validate(function(result) {
 		console.log("Order Validated");
 	});
+	
+	// PRINT THE PRICE OF MY ORDER
+	order.price(function(price) {
+		console.log("The price of my order is: $" + price.result.Order.Amounts.Payment);
+	});
 });
