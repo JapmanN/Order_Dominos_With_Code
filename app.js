@@ -11,4 +11,9 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 	var Closest_Store = new pizzapi.Store({
 		ID: storeData.result.Stores[0].StoreID
 	});
+	
+	// GET ALL OF THE PRODUCTS IN THE DOMINOS MENU (so I can select what I want to eat)
+	Closest_Store.getMenu(function(storeMenu) {
+		console.log(storeMenu.menuData.result.Products);
+	});
 });
