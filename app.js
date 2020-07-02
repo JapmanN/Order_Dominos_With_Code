@@ -72,4 +72,9 @@ pizzapi.Util.findNearbyStores(process.env.POSTAL_CODE,'Carryout', function(store
 	cardInfo.SecurityCode = process.env.CARD_SECURITY_CODE;
 	cardInfo.PostalCode = process.env.POSTAL_CODE; // Billing Zipcode
 	order.Payments.push(cardInfo);
+	
+	// PLACE MY ORDER
+	order.place(function(order) {
+		console.log("Order placed!");
+	});
 });
